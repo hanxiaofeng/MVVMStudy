@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.databinding.*
 import androidx.databinding.library.baseAdapters.BR
 import com.camerax.databindingdemo.databinding.ActivityMainBinding
+import com.camerax.databindingdemo.viewmodel.ViewModelActivity
 
 class MainActivity : AppCompatActivity() ,OnUserClickListener{
 
@@ -82,10 +83,18 @@ class MainActivity : AppCompatActivity() ,OnUserClickListener{
     }
 
     fun jumpPage(view: View){
-        val intent = Intent()
-        //获取intent对象
-        intent.setClass(this,RecyclerViewActivity::class.java)
-        // 获取class是使用::反射
-        startActivity(intent)
+        if(view.id == R.id.btn_jump){
+            val intent = Intent()
+            //获取intent对象
+            intent.setClass(this,RecyclerViewActivity::class.java)
+            // 获取class是使用::反射
+            startActivity(intent)
+        }else if(view.id == R.id.btn_viewModel){
+            val intent = Intent()
+            //获取intent对象
+            intent.setClass(this,ViewModelActivity::class.java)
+            // 获取class是使用::反射
+            startActivity(intent)
+        }
     }
 }
