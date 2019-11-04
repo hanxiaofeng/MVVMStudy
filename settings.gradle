@@ -1,0 +1,2 @@
+include ':app', ':apkinstalltest', ':databindingdemo'
+rootProject.name='MVVMStudy'

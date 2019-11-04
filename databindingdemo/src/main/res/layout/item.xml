@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="book"
+            type="com.camerax.databindingdemo.Book" />
+
+        <variable
+            name="itemClick"
+            type="com.camerax.databindingdemo.ItemClick" />
+
+        <variable
+            name="position"
+            type="androidx.databinding.ObservableInt" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view)->itemClick.itemClick(view,book,position.get())}"
+        android:gravity="center"
+        android:background="@drawable/click_state_bg"
+        >
+
+        <TextView
+            android:id="@+id/tv_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:text="@{book.name}"
+            android:gravity="center"
+            android:textColor="@android:color/holo_orange_dark"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark"
+            />
+    </LinearLayout>
+</layout>
